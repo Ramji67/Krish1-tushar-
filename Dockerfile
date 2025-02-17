@@ -6,6 +6,6 @@ RUN apt-get update -y && apt-get upgrade -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /app/modules/
-WORKDIR /app/
+WORKDIR /app/modules/
 RUN pip3 install -r requirements.txt
 CMD gunicorn app:app & python3 modules/main.py
